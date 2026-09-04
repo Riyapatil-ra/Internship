@@ -12,7 +12,7 @@ print("Good Morning")
 print("Leaarn to live")
 
 print("Hello"); print("Morning"); print("Mam");
-print("Hello") print("Morning") print("Mam") it show error
+# print("Hello") print("Morning") print("Mam") it show error
 print('hello')
 print("Hello ",end="")
 print("Sneha")
@@ -46,8 +46,8 @@ print(type(y),y)
 print(type(z),z)
 
 # invalid variables name
-2myavr="john"
-my-var="john"
+# 2myavr="john"
+# my-var="john"
 
 # Camel case
 myVarName="John"
@@ -306,7 +306,7 @@ print(f"The price is {price:.2f} dollars")
 print(f"The price is {20 * 40} dollars")
 
 # # Escape characters
-print("We are the so-called "Vikings" from the north.")
+# print("We are the so-called "Vikings" from the north.")
 print("We are the so-called \"Vikings\" from the north.")
 
 print("It\'s alright.") # \'= single quote
