@@ -465,4 +465,5 @@ print(a is b)
 
 num1=[1,2,3]
 num2=[1,2,3]
-print(1 in num2)
+print(num1 is num2)
+print(num1 is not num2)
