@@ -419,6 +419,10 @@ x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekda
 print(x)
 
 # Identity operators
+'''
+Identity operators are used to compare the objects, not if they are equal, 
+but if they are actually the same object, with the same memory location:
+'''
 a=["apple","mango","cherry"]
 b=["apple","mango","cherry"]
 x=10
