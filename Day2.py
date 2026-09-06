@@ -685,8 +685,251 @@ Arguments are specified after the function name,
 inside the parentheses. You can add as many 
 arguments as you want,just separate them with a comma.
 '''
-def demo(name): # function(parameter)
-    print(name+" is a good boy")
-demo("Rohit") # function(argument)
-demo('Ram')
-demo('Shyam')
+# def demo(name): # function(parameter)
+#     print(name+" is a good boy")
+# demo("Rohit") # function(argument)
+# demo('Ram')
+# demo('Shyam')
+
+''' Parameters vs Arguments
+* A parameter is the variable listed inside the parentheses in the function definition. 
+* An argument is the actual value that is sent to the function when it is called.
+'''
+
+''' Default Parameter Value 
+* You can assign default values to parameters. 
+* If the function is called without an argument, 
+it uses the default value
+'''
+
+# def demo(name='Radha'):
+#     print("Hello ",name)
+
+# demo('Suraj')
+# demo()
+# demo('Krishna')
+
+''' Keyword Arguments
+* You can send arguments with the key = value syntax.
+'''
+# def demo(animal,name):
+#     print("I have a",animal)
+#     print("My",animal +"'s name is",name)
+
+# demo(animal='dog',name='Tommy')
+# demo(name='kitty',animal='cat')
+
+''' Positional Arguments
+* When you call a function with arguments without using keywords, 
+they are called positional arguments.
+* Positional arguments must be in the correct order:
+'''
+# def demo(animal,name):
+#     print("I have a",animal)
+#     print("My",animal +"'s name is",name)
+
+# demo('dog','Tommy')
+# demo('kitty','cat')
+
+''' Mixing Positional and Keyword Arguments
+* positional arguments must come before keyword arguments: 
+'''
+
+# def demo(animal,name,age):
+#     print("I have a", age,"year old",animal,"named",name)
+
+# demo('dog',name='Tommy',age=7)
+# demo(age=3,name='kitty','cat')
+
+''' Passing Different Data Types'''
+
+# def demo(fruits):
+#     for i in fruits:
+#       print(i)
+
+# demo(['mango','banana','cherry'])
+# demo(['a','n','c'])
+# demo((1,2,3,4))
+# demo({'name':'John','age':36})
+# demo({'name':'John','age':36}.values())
+
+# def my_function(person):
+#   print("Name:", person["name"])
+#   print("Age:", person["age"])
+
+# my_person = {"name": "Emil", "age": 25}
+# my_function(my_person)
+
+# d={1:2,2:1,3:2,4:5}
+# for i in d.keys():
+#     if d[i]>1:
+#       print(i)
+
+''' Return Values '''
+
+# def demo(a,b):
+#     return a+b
+# print(demo(3,6))
+
+# def demo():
+#     return [1,2,3,4]
+
+# num=demo()
+# print(num)
+# print(num[0])
+
+# def demo():
+#     return (1,2)
+# x,y=demo()
+# print('x:',x)
+# print('y:',y)
+
+''' Positional Arguments only'''
+# def demo(name,/):
+#     print("Hello",name)
+# demo('Email')
+
+''' Keyword Arguments only'''
+
+# def demo(*,name):
+#     print("Hello",name)
+# demo(name='Email')
+
+''' Positional-only and Keyword-only Arguments'''
+# def demo(name,/,*,age):
+#     print("Hello",name)
+#     print("Age:",age)
+
+# demo('Email',age=25)
+
+''' Python *args and **kwargs
+* *args and **kwargs allow functions to accept a unknown number of arguments.
+'''
+
+''' *args = Arbitary Arguments 
+* If you do not know how many arguments will be passed into your function, 
+add a * before the parameter name.
+'''
+
+# def demo(*kids):
+#     print("The youngest child is " + kids[0])
+
+# demo("Emil", "Tobias", "Linus")
+
+''' The *args parameter allows a function to 
+accept any number of positional arguments.
+Inside the function, args becomes a tuple containing all the passed arguments:
+'''
+# def my_function(*args):
+#   print("Type:", type(args))
+#   print("First argument:", args[0])
+#   print("Second argument:", args[1])
+#   print("All arguments:", args)
+
+# my_function("Emil", "Tobias", "Linus")
+
+''' Using *args with Regular Arguments'''
+# def my_function(greeting, *names):
+#   for name in names:
+#     print(greeting, name)
+
+# my_function("Hello", "Emil", "Tobias", "Linus")
+
+# def my_function(*numbers):
+#   total = 0
+#   for num in numbers:
+#     total += num
+#   return total
+
+# print(my_function(1, 2, 3))
+# print(my_function(10, 20, 30, 40))
+# print(my_function(5))
+
+# def my_function(*numbers):
+#   if len(numbers) == 0:
+#     return None
+#   max_num = numbers[0]
+#   for num in numbers:
+#     if num > max_num:
+#       max_num = num
+#   return max_num
+
+# print(my_function(3, 7, 2, 9, 1))
+
+''' **kwargs = Arbitrary Keyword Arguments
+* If you do not know how many keyword arguments will be passed into your function,
+add two asterisks ** before the parameter name.
+'''
+
+# def my_function(**kid):
+#   print("His last name is " + kid["lname"])
+#   print("His first name is " + kid["fname"])
+#   print("His age is " + str(kid["age"]))
+
+# my_function(fname = "Tobias", lname = "Refsnes",age=12)
+
+''' **kwargs allows a function to accept any number of keyword arguments.
+Inside the function, kwargs becomes a dictionary containing all the passed keyword arguments:
+'''
+# def my_function(**kid):
+#   print("His last name is " + kid["lname"])
+#   print(f"{kid['fname']} {kid['lname']} is {kid['age']} years old.")
+#   print(kid)
+
+# my_function(fname = "Tobias", lname = "Refsnes", age=12)
+
+# def my_function(**myvar):
+#   print("Type:", type(myvar))
+#   print("Name:", myvar["name"])
+#   print("Age:", myvar["age"])
+#   print("All data:", myvar)
+
+# my_function(name = "Tobias", age = 30, city = "Bergen")
+
+''' Using **kwargs with Regular Arguments'''
+
+# def my_function(username, **details):
+#   print("Username:", username)
+#   print("Additional details:")
+#   for key, value in details.items():
+#     print(" ", key + ":", value)
+
+# my_function("emil123", age = 25, city = "Oslo", hobby = "coding")
+
+''' Mixing *args and **kwargs'''
+
+# def my_function(title, *args, **kwargs):
+#   print("Title:", title)
+#   print("Positional arguments:", args)
+#   print("Keyword arguments:", kwargs)
+
+# my_function("User Info", "Emil", "Tobias", age = 25, city = "Oslo")
+
+''' Unpacking Arguments'''
+''' Unpacking lists with * '''
+# def demo(a,b,c):
+#     return a+b+c
+
+# nums=[1,2,3]
+# print(demo(*nums))
+
+''' Unpacking dictionaries with ** '''
+# def demo2(a,b,c):
+#     return a+b+c
+
+# data = {"a": 1, "b": 2, "c": 3}
+# print(demo2(**data))
+
+''' Scope
+* A variable is only available from inside the region it is created. 
+This is called scope.
+'''
+
+''' Local Scope
+* A variable created inside a function belongs to the local scope of that function, and can only be used inside that function.
+'''
+
+def demo():
+    x=300
+    print(x)
+demo()
