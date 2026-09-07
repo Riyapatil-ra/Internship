@@ -480,5 +480,5 @@ regardless of the result of the try- and except blocks.
 ''' Python Virtual Environment'''
 # Creating=python -m venv myfirstproject
 # Activate=myfirstproject\Scripts\activate
-# deactivate=myfirstproject\Scripts\deactivate
+# Deactivate=myfirstproject\Scripts\deactivate
 # delete= rmdir /s /q myfirstproject
