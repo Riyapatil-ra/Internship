@@ -12,6 +12,7 @@ pattern3=r"https?://(?:www\.)?[a-zA-Z0-9]+\.(?:com|edu|net|org)"
 pattern4=r"\d+"
 
 user=input("Enter a para: ")
+
 email=re.findall(pattern1,user)
 phone=re.findall(pattern2,user)
 url=re.findall(pattern3,user)
@@ -20,11 +21,15 @@ numbers=re.findall(pattern4,user)
 for i in phone:
     numbers.remove(i)
 
-print("\nEmail addressses:")
-print(* email,sep="\n")
-print("\n10-digit phone numbers:")    
-print(* phone,sep="\n")
-print("\nURLs:")
-print(* url,sep="\n")
-print("\nNumbers:")
-print(* numbers,sep="\n")
+if email!=[]:
+    print("\nEmail addressses:")
+    print(* email,sep="\n")
+if phone!=[]:
+    print("\n10-digit phone numbers:")    
+    print(* phone,sep="\n")
+if url!=[]:
+    print("\nURLs:")
+    print(* url,sep="\n")
+if numbers!=[]:
+    print("\nNumbers:")
+    print(* numbers,sep="\n")
