@@ -14,12 +14,12 @@ marks = [85, 72, 91, 64, 78]
 '''
 names = ["A", "B", "C", "D", "E"]
 marks = [85, 72, 91, 64, 78]
-grade=[]
+status=[]
 for i in range(len(marks)):
     if marks[i]>75:
-        grade.append("Pass")
+        status.append("Pass")
     else:
-        grade.append("Fail")
-print("Sr.no Name   Marks   Grades")
-for i,(name,mark,grades) in enumerate(zip(names,marks,grade),start=1):
-    print(f"{i}     {name}      {mark}      {grades}")
+        status.append("Fail")
+print("Sr.no Name   Marks   Status")
+for i,(name,mark,status1) in enumerate(zip(names,marks,status),start=1):
+    print(f"{i}     {name}      {mark}      {status1}")
